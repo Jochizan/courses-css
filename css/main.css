@@ -32,7 +32,10 @@ html {
 
   /* flex-flow */
   /* flex flow es la combinación de flex-direction y flex-wrap */
-  flex-flow: column-reverse wrap;
+  flex-flow: row wrap;
+  /* Justify content define la alineación de los elementos hijos, respecto del 
+  eje principal definida en flex-direcion */
+  justify-content: space-evenly;
 }
 
 .items {
