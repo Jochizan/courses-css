@@ -1,6 +1,8 @@
 *,
 ::before,
 ::after {
+  /* box-sizing; nos ayuda a que se considere y resetee los valores 
+  de la caja para que con flex wrap pueda funcionar de mejor manera*/
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -8,17 +10,35 @@
 
 html {
   font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
 }
 
 .container {
   background-color: #222;
-  /*padding: 1rem;*/
-  display: inline-flex;
+  height: 30vh;
+
+  /* flex I */
+  /* flex junta todos los contenedores con este en lineas*/
+  display: flex; /* block | flex | inline-flex */
+  /* inline-flex hace los mismo solo que dilimitando a solo lo que necesitan */
+
+  /* flex-direction */
+  /* row-reverse invierte el orden en el que se muestran apegandolo hacia arriba*/
+  /* column los muestra alineados en columna y con reverse los muestra en orden 
+  inverso pero apegandolo hacia abajo*/
+  flex-direction: row-reverse; /* row | row-reverse | column | column-reverse */
+  flex-wrap: wrap; /* nowrap | wrap | wrap-reverse*/
+
+  /* flex-flow */
+  /* flex flow es la combinación de flex-direction y flex-wrap */
+  flex-flow: column-reverse wrap;
 }
 
 .items {
+  border: medium solid #444;
+  width: 20%;
+  height: 20%;
   font-size: 2rem;
-  background-color: #444;
+  background-color: #888;
 }
