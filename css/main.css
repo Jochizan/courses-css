@@ -1,0 +1,24 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.container {
+  background-color: #222;
+  /*padding: 1rem;*/
+  display: inline-flex;
+}
+
+.items {
+  font-size: 2rem;
+  background-color: #444;
+}
