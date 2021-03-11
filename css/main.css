@@ -18,30 +18,42 @@ html {
   background-color: #222;
   height: 30vh;
 
-  /* flex I */
-  /* flex junta todos los contenedores con este en lineas*/
-  display: flex; /* block | flex | inline-flex */
+  /* Flex I del Elemento Padre */
+  /* Display define que una caja será flexbox de bloque o flexbox de línea */
   /* inline-flex hace los mismo solo que dilimitando a solo lo que necesitan */
-
-  /* flex-direction */
+  display: flex; /* block | flex | inline-flex */
+  /* flex-direction define el (main axis) row --x, column --y */
   /* row-reverse invierte el orden en el que se muestran apegandolo hacia arriba*/
   /* column los muestra alineados en columna y con reverse los muestra en orden 
   inverso pero apegandolo hacia abajo*/
   flex-direction: row-reverse; /* row | row-reverse | column | column-reverse */
+  /* wrap define si la caja flexbox envuelve o NO sus hijos */
   flex-wrap: wrap; /* nowrap | wrap | wrap-reverse*/
-
   /* flex-flow */
   /* flex flow es la combinación de flex-direction y flex-wrap */
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   /* Justify content define la alineación de los elementos hijos, respecto del 
-  eje principal definida en flex-direcion */
-  justify-content: space-evenly;
+  eje principal definida en flex-direcion (main axis) */
+  justify-content: flex-start; /* flex-start | flex-end | space-between | space-around | space-evenly */
+  /* Align items difne la alineación de los elementos hijos, respecto del
+  eje secundario definida en el flex-direcion (cross axis) */
+  align-items: stretch; /* stretch | flex-start | flex-end | center | baseline */
+  /* Align content hace lo mismo que justify-content pero en el eje transversal o secundario
+  y no funciona si los hijos están en UNA sóla línea por el flex-wrap: nowrap; */
+  align-content: stretch; /* flex-start | flex-end | center | stretch 
+  | space-between | space-around | space-evenly */
 }
 
 .items {
   border: medium solid #444;
-  width: 20%;
+  /* Tanto el width como el height son importantes cuando se usa flex-direction 
+  y el align-items como el align-content es stretch */
+  /* width: 20%; */
   height: 20%;
   font-size: 2rem;
   background-color: #888;
 }
+
+/* .items:nth-child(2) {
+  font-size: 150%;
+} */
