@@ -2,7 +2,7 @@
 ::before,
 ::after {
   /* box-sizing; nos ayuda a que se considere y resetee los valores 
-  de la caja para que con flex wrap pueda funcionar de mejor manera*/
+  de la caja para que con flex wrap pueda funcionar de mejor manera */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -15,7 +15,7 @@ html {
 }
 
 .container {
-  width: 1000px;
+  width: 100%;
   background-color: #222;
   height: 30vh;
 
@@ -36,7 +36,7 @@ html {
   /* Justify content define la alineación de los elementos hijos, respecto del 
   eje principal definida en flex-direcion (main axis) */
   justify-content: flex-start; /* flex-start | flex-end | space-between | space-around | space-evenly */
-  /* Align items difne la alineación de los elementos hijos, respecto del
+  /* Align item difne la alineación de los elementos hijos, respecto del
   eje secundario definida en el flex-direcion (cross axis) */
   align-items: stretch; /* stretch | flex-start | flex-end | center | baseline */
   /* Align content hace lo mismo que justify-content pero en el eje transversal o secundario
@@ -45,29 +45,31 @@ html {
   | space-between | space-around | space-evenly */
 }
 
-.items {
+.item {
   border: medium solid #444;
   /* Tanto el width como el height son importantes cuando se usa flex-direction 
-  y el align-items como el align-content es stretch */
+  y el align-item como el align-content es stretch */
   /* width: 20%; */
   /* height: 20%; */
   /** Cuando la caja flexbox tenga sobrante, es la habilidad de crecer, 
   valor por defecto es 0, NO se aceptan valores negativos */
-  flex-grow: 1;
+  flex-grow: 0;
   /* Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad 
   o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos
   */
   flex-shrink: 1;
   flex-basis: auto;
+
   font-size: 2rem;
   background-color: #888;
 }
 
-.items:nth-child(2) {
-  flex-grow: 3;
+.item:nth-child(2) {
+  /* flex-grow: 3; */
+  flex-shrink: 2;
 }
 
-.items:nth-child(3) {
-  flex-grow: 2;
+.item:nth-child(3) {
+  /* flex-grow: 2; */
+  flex-shrink: 3;
 }
-
