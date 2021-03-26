@@ -15,6 +15,7 @@ html {
 }
 
 .container {
+  width: 1000px;
   background-color: #222;
   height: 30vh;
 
@@ -26,12 +27,12 @@ html {
   /* row-reverse invierte el orden en el que se muestran apegandolo hacia arriba*/
   /* column los muestra alineados en columna y con reverse los muestra en orden 
   inverso pero apegandolo hacia abajo*/
-  flex-direction: row-reverse; /* row | row-reverse | column | column-reverse */
+  flex-direction: row; /* row | row-reverse | column | column-reverse */
   /* wrap define si la caja flexbox envuelve o NO sus hijos */
-  flex-wrap: wrap; /* nowrap | wrap | wrap-reverse*/
+  flex-wrap: nowrap; /* nowrap | wrap | wrap-reverse*/
   /* flex-flow */
   /* flex flow es la combinación de flex-direction y flex-wrap */
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
   /* Justify content define la alineación de los elementos hijos, respecto del 
   eje principal definida en flex-direcion (main axis) */
   justify-content: flex-start; /* flex-start | flex-end | space-between | space-around | space-evenly */
@@ -40,7 +41,7 @@ html {
   align-items: stretch; /* stretch | flex-start | flex-end | center | baseline */
   /* Align content hace lo mismo que justify-content pero en el eje transversal o secundario
   y no funciona si los hijos están en UNA sóla línea por el flex-wrap: nowrap; */
-  align-content: stretch; /* flex-start | flex-end | center | stretch 
+  align-content: flex-start; /* flex-start | flex-end | center | stretch 
   | space-between | space-around | space-evenly */
 }
 
@@ -49,11 +50,24 @@ html {
   /* Tanto el width como el height son importantes cuando se usa flex-direction 
   y el align-items como el align-content es stretch */
   /* width: 20%; */
-  height: 20%;
+  /* height: 20%; */
+  /** Cuando la caja flexbox tenga sobrante, es la habilidad de crecer, 
+  valor por defecto es 0, NO se aceptan valores negativos */
+  flex-grow: 1;
+  /* Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad 
+  o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos
+  */
+  flex-shrink: 1;
+  flex-basis: auto;
   font-size: 2rem;
   background-color: #888;
 }
 
-/* .items:nth-child(2) {
-  font-size: 150%;
-} */
+.items:nth-child(2) {
+  flex-grow: 3;
+}
+
+.items:nth-child(3) {
+  flex-grow: 2;
+}
+
