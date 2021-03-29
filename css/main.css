@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+:root {
+  --middle-grey: #908f83;
+  --beige: #dce0cc;
+  --olive-green: #a0ac5b;
+  --ebony: #60695f;
+  --eerie-black: #141618;
+}
+
 *,
 ::before,
 ::after {
@@ -14,69 +24,89 @@ html {
   color: #fff;
 }
 
-.container {
-  background-color: #222;
-  height: 400px;
-  width: 100%;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(
+    to top,
+    #141618,
+    #3b403a,
+    #636b61,
+    #7e8844,
+    #a0ac5b
+  );
+  height: 100vh;
+}
 
-  /* Flex I del Elemento Padre */
-  /* Display define que una caja será flexbox de bloque o flexbox de línea */
-  /* inline-flex hace los mismo solo que dilimitando a solo lo que necesitan */
-  display: flex; /* block | flex | inline-flex */
-  /* flex-direction define el (main axis) row --x, column --y */
-  /* row-reverse invierte el orden en el que se muestran apegandolo hacia arriba*/
-  /* column los muestra alineados en columna y con reverse los muestra en orden 
-      inverso pero apegandolo hacia abajo*/
-  flex-direction: row; /* row | row-reverse | column | column-reverse */
-  /* wrap define si la caja flexbox envuelve o NO sus hijos */
-  flex-wrap: nowrap; /* nowrap | wrap | wrap-reverse*/
-  /* flex-flow */
-  /* flex flow es la combinación de flex-direction y flex-wrap */
-  flex-flow: row nowrap;
-  /* Justify content define la alineación de los elementos hijos, respecto del 
-      eje principal definida en flex-direcion (main axis) */
-  justify-content: flex-start; /* flex-start | flex-end | space-between | space-around | space-evenly */
-  /* Align item difne la alineación de los elementos hijos, respecto del
-      eje secundario definida en el flex-direcion (cross axis) */
-  align-items: stretch; /* stretch | flex-start | flex-end | center | baseline */
-  /* Align content hace lo mismo que justify-content pero en el eje transversal o secundario
-      y no funciona si los hijos están en UNA sóla línea por el flex-wrap: nowrap; */
-  align-content: flex-start; /* flex-start | flex-end | center | stretch 
-  | space-between | space-around | space-evenly */
+.container {
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+  grid-template-areas:
+    'card-1 card-2'
+    'card-1 card-3';
+  height: 100vh;
 }
 
 .item {
-  border: medium solid #444;
-  /* Tanto el width como el height son importantes cuando se usa flex-direction 
-      y el align-item como el align-content es stretch */
-  /* width: 20%; */
-  /* height: 20%; */
-  /** Cuando la caja flexbox tenga sobrante, es la habilidad de crecer, 
-      valor por defecto es 0, NO se aceptan valores negativos */
-  flex-grow: 0;
-  /* Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad 
-     o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos
-  */
-  flex-shrink: 1;
-  flex-basis: auto;
-  flex-basis: 100px;
-  /* width: 200px; */
-  /* Es el tamaño del elemento hijo dentro de la línea de la caja flexbox
-    Si la caja flexbox tiene dirección de fila, flex-basis representa el width
-    Si la caja flexbox tiene dirección de columna, flex-basis representa el height
-    Valor por defecto "auto" */
-  flex: 1 1 auto;
-  /* Es un shorthand de las propiedades flex-grow, flex-shrink y flex-basis, en ese orden */
-  font-size: 2rem;
-  background-color: #888;
+  background: var(--ebony);
+
+  /* grid-column-start: 1; */
+  /* grid-column-end: 2; */
+  /* grid-column: auto; */
 }
 
-.item:nth-child(2) {
-  /* flex-grow: 3; */
-  /* flex-shrink: 2; */
+.item-1 {
+  background: var(--middle-grey);
+  grid-column: 1 / 2;
+  grid-row: 5 / 10;
 }
 
-.item:nth-child(3) {
-  /* flex-grow: 2; */
-  /* flex-shrink: 3; */
+.item-2 {
+  background: var(--eerie-black);
+  grid-column: 1 / 4;
+  grid-row: 7 / 9;
+  opacity: 50%;
+}
+
+.item-3 {
+  background: var(--olive-green);
+  grid-column: 5 / 8;
+  grid-row: 6 / 10;
+}
+
+.item-4 {
+  border: 4px solid var(--olive-green);
+  grid-column: 6 / 9;
+  grid-row: 5 / 8;
+}
+
+.item-5 {
+  border: 4px solid var(--olive-green);
+  grid-column: 7 / 10;
+  grid-row: 3 / 9;
+}
+
+.item-6 {
+  font-size: 40px;
+  grid-column: 6 / 9;
+  grid-row: 3 / 5;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.item-7 {
+  background: var(--olive-green);
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+.item-8 {
+  font-size: 24px;
+  display: grid;
+  grid-column-start: 4;
+  grid-row: 2 / 4;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  justify-items: center;
+  align-items: center;
 }
