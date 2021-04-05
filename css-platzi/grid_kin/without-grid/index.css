@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  background-color: blueviolet;
+  width: 100%;
+  height: 150px;
+}
+
+.parent-child {
+  background-color: brown;
+  width: 50%;
+  height: 50%;
+}
+
+.parent-child-child {
+  background-color: aqua;
+  width: 50%;
+  height: 50%;
+}

@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  height: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  background-color: aqua;
+  width: 100%;
+  height: 150px;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+
+.container-item {
+  background-color: black;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+
+.container-item-child {
+  background-color: azure;
+}

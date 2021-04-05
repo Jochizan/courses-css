@@ -1,0 +1,24 @@
+{
+  "name": "layout-css",
+  "version": "1.0.0",
+  "description": "Course CSS with Platzi and Jonmircha",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass -w CSS-platzi/flexbox/ -o CSS-platzi/flexbox/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jochizan/layout-css.git"
+  },
+  "keywords": [
+    "GRID",
+    "css",
+    "sass"
+  ],
+  "author": "Joan Roca Hormaza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jochizan/layout-css/issues"
+  },
+  "homepage": "https://github.com/Jochizan/layout-css#readme"
+}
