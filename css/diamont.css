@@ -1,0 +1,43 @@
+html,
+body {
+  background-color: #eee;
+  background: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #902340;
+}
+
+img,
+h1 {
+  display: inline-block;
+  font-size: 60px;
+}
+
+container {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.diamont {
+  display: inline-block;
+  border-style: solid;
+  border-width: 0 25px 25px 25px;
+  border-color: transparent transparent wheat transparent;
+  height: 0;
+  width: 50px;
+  position: relative;
+  margin: 20px 0 50px 0;
+}
+
+.diamont::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: -25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 70px 50px 0 50px;
+  border-color: wheat transparent transparent transparent;
+}
