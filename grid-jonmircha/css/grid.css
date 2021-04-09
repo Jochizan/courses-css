@@ -84,3 +84,47 @@ img {
   gap: 1vh 1vw;
   gap: 0;
 }
+
+.grid-explicit .item:nth-child(10) {
+  color: red;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* ShortHands */
+  grid-row: 2 / 3;
+  grid-column: 3 / 5;
+  /* ShortHand de grid-row and grid-column */
+  /* grid-area: grid-row / grid-column */
+  grid-area: 2 / 3 / 3 / 5;
+}
+
+.grid-explicit .item:nth-child(12) {
+  color: cyan;
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+.grid-explicit .item:nth-child(15) {
+  color: cyan;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+
+/* Grid Lines Names */
+
+.grid-line-names {
+  display: grid;
+  /* Grid de 3r x 3c */
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-template: [linea-r1] 1fr [linea-r2] 1fr [linea-r3] 1fr [linea-r4] / [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+  grid-template-rows: [linea-r1] auto [linea-r2] auto [linea-r3] auto [linea-r4];
+}
+
+.grid-line-names .item:nth-child(3) {
+  color: cyan;
+  grid-row: linea-r3 / linea-r4;
+  grid-column: linea-c1 / linea-c4;
+  /* grid-area no funciona cuando el template esta definido por nombres */
+  /* grid-area: linea-r3 / linea-r4 / linea-c1 / linea-c4; */
+}
