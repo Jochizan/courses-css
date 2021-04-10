@@ -128,3 +128,43 @@ img {
   /* grid-area no funciona cuando el template esta definido por nombres */
   /* grid-area: linea-r3 / linea-r4 / linea-c1 / linea-c4; */
 }
+
+
+/* Grid Areas */
+
+.grid-areas {
+  display: grid;
+  /* Grid de 3r x 2c*/
+  grid-template: 100px repeat(2, 1fr) 60px / 1fr 200px;
+  grid-template-areas: 
+    "header header"
+    "content sidebar"
+    "content ."
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Grid Implicita */
+
+.grid-implicit {
+  width: 40%;
+  /* Grid de 3rx4c */
+  display: grid; /* Intercambiar entre inline y solo grid para ver los efectos */
+  display: inline-grid;
+  grid-template: repeat(3, 200px) / repeat(4, 1fr);
+}
