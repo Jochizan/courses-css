@@ -129,18 +129,17 @@ img {
   /* grid-area: linea-r3 / linea-r4 / linea-c1 / linea-c4; */
 }
 
-
 /* Grid Areas */
 
 .grid-areas {
   display: grid;
   /* Grid de 3r x 2c*/
   grid-template: 100px repeat(2, 1fr) 60px / 1fr 200px;
-  grid-template-areas: 
-    "header header"
-    "content sidebar"
-    "content ."
-    "footer footer";
+  grid-template-areas:
+    'header header'
+    'content sidebar'
+    'content .'
+    'footer footer';
 }
 
 .header {
@@ -168,3 +167,41 @@ img {
   display: inline-grid;
   grid-template: repeat(3, 200px) / repeat(4, 1fr);
 }
+
+/* Grid Flow */
+
+.grid-flow {
+  display: grid;
+  /* Grid de 4r x 5c*/
+  grid-template: repeat(3, 150px) / repeat(5, 1fr);
+  grid-auto-flow: row;
+  grid-auto-rows: 100px;
+  grid-auto-flow: column;
+  grid-auto-columns: 50px;
+}
+
+/* Grid Flow Dense */
+
+.grid-flow-dense {
+  display: grid;
+  /* 4r x 5c */
+  grid-template: repeat(4, 200px) / repeat(5, 1fr);
+  grid-auto-flow: row dense;
+  grid-auto-flow: column;
+  grid-auto-flow: column dense;
+}
+
+/* .grid-flow-dense .item:nth-child(9) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+   grid: span 3 / span 3;
+} */
+
+.grid-flow-dense .item:nth-child(11) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+  /* grid: span 3 / span 3; */
+}
+
