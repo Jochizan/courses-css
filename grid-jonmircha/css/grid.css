@@ -205,3 +205,85 @@ img {
   /* grid: span 3 / span 3; */
 }
 
+/* Grid Layers */
+
+.grid-layers {
+  display: grid;
+  /* Grid de 4r x 4c */
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  /* grid-template-areas:  */
+    /* ""; */
+}
+
+.grid-layers .item:nth-child(1) {
+  background-color: #DBEA33;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.grid-layers .item:nth-child(2) {
+  background-color: #497af8;
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+.grid-layers .item:nth-child(3) {
+  background-color: #90e971;
+  grid-column: 1 / 3;
+  grid-row: 3 / 5;
+}
+
+.grid-layers .item:nth-child(4) {
+  background-color: #90e971;
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+}
+
+.grid-layers .item:nth-child(5) {
+  background-color: #c92af0;
+  opacity: 75%;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+}
+
+/* Grid Order */
+.grid-order {
+  display: grid;
+  /* Grid 4r x 4c */
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  grid-auto-flow: column;
+}
+
+.grid-order .item:nth-child(1) {
+  /* default es 0, acepta valores positivos y negativos */
+  order: 1;
+}
+
+.grid-order .item:nth-child(2) {
+  order: 2;
+}
+
+.grid-order .item:nth-child(5) {
+  order: -1;
+}
+
+.grid-align {
+  display: grid;
+  /* Grid 2r x 3c */
+  grid-template: repeat(2, 200px) / repeat(3, 200px);
+  /* Justify items alinea mis elementos grid en el eje horizontal (X) */
+  justify-items: stretch;
+  justify-items: start;
+  justify-items: end;
+  justify-items: center;
+  /* justify-items alinea mis elementos grid en el eje vertical (Y) */
+  align-items: stretch;
+  align-items: start;
+  align-items: end;
+  align-items: center;
+}
+
+.grid-align .item:nth-child(4) {
+  justify-self: start;
+  align-self: start;
+}
