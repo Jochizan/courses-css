@@ -320,3 +320,37 @@ img {
   grid-template: auto / repeat(4, minmax(max-content, 200px));
   grid-template: auto / repeat(4, minmax(min-content, max-content));
 }
+
+/* Grid Repeat */
+
+.grid-repeat {
+  display: grid;
+  /* Grid 4r x 4c */
+  /* NOTA IMPORTANTE el segundo valor dentro de repeat es un PATRÓN */
+  grid-template: repeat(2, 100px 200px) / repeat(3, 10% 20% 30% 40%);
+  grid-template: repeat(2, 100px 200px) / repeat(2, 10% 20% 30% 40%);
+  grid-template: repeat(2, 100px 200px) / repeat(1, 10% 20% 30% 40%);
+  grid-auto-rows: 150px;
+  grid-auto-rows: 100px 200px;
+}
+
+/* Grid Dynamic */
+
+.grid-dynamics {
+  display: grid;
+  /* Grid 4? x 4c */
+  grid-template: auto / repeat(4, 100px);
+  /* auto-fill rellena la grid con tracks generados dinámicamente */
+  grid-template: auto / repeat(auto-fill, 100px);
+  /* auto-fit ajusta la grid con los tracks existentes */
+  grid-template: auto / repeat(auto-fit, 100px);
+  grid-template: auto / repeat(auto-fill, minmax(100px, 1fr));
+  grid-template: auto / repeat(auto-fit, minmax(100px, 1fr));
+}
+
+/* Grid Responsive */
+.grid-responsive {
+  display: grid;
+  grid-template: auto / repeat(auto-fit, minmax(280px, 1fr));
+  /* gap: 1vw; */
+}
