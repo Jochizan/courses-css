@@ -212,11 +212,11 @@ img {
   /* Grid de 4r x 4c */
   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
   /* grid-template-areas:  */
-    /* ""; */
+  /* ""; */
 }
 
 .grid-layers .item:nth-child(1) {
-  background-color: #DBEA33;
+  background-color: #dbea33;
   grid-column: 1 / 3;
   grid-row: 1 / 3;
 }
@@ -286,4 +286,37 @@ img {
 .grid-align .item:nth-child(4) {
   justify-self: start;
   align-self: start;
+}
+
+.grid-align-tracks {
+  display: grid;
+  /* Grid de 2r x 3c */
+  grid-template: repeat(2, 200px) / repeat(3, 200px);
+  /* justify-content alinea los tracks de la grid en el main axis eje (X) */
+  justify-content: start;
+  justify-content: center;
+  justify-content: end;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  /* align-content alinea los tracks de la grid en el cross axis eje vertical (Y)  */
+  align-content: start;
+  align-content: end;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+}
+
+.grid-min-max {
+  display: grid;
+  /* Grid ?r x 4c */
+  grid-template: auto / repeat(4, minmax(100px, 200px));
+  grid-template: auto / repeat(4, minmax(min-content, 200px));
+  grid-template: auto / repeat(4, minmax(100px, min-content));
+  grid-template: auto / repeat(4, minmax(100px, max-content));
+  grid-template: auto / repeat(4, minmax(100px, max-content));
+  grid-template: auto / repeat(4, minmax(max-content, 200px));
+  grid-template: auto / repeat(4, minmax(max-content, 200px));
+  grid-template: auto / repeat(4, minmax(min-content, max-content));
 }
