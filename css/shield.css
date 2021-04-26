@@ -1,0 +1,54 @@
+/* container shield */
+.shield-container {
+  background: #355675;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  border: solid #ad3332 2rem;
+}
+
+/* base the shield */
+.shield {
+  width: 17rem;
+  height: 17rem;
+  background: #e8e6e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid #ad3332 2rem;
+  margin: 2rem auto 0 auto;
+}
+
+.shield-text {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* star */
+.container-star,
+.container-star::after,
+.container-star::before {
+  border-color: transparent transparent #fff transparent;
+  border-width: 0 4rem 2.5rem 4rem;
+  border-style: solid;
+  position: absolute;
+  transform: rotate(180deg);
+  margin-top: 2.75rem;
+  margin-left: 0.25rem;
+}
+
+.container-star::before {
+  content: '';
+  margin-top: -0.15rem;
+  margin-left: -4.3rem;
+  transform: rotate(70deg);
+}
+
+.container-star::after {
+  content: '';
+  margin-top: -0.29rem;
+  margin-left: -3.87rem;
+  transform: rotate(-70deg);
+}
