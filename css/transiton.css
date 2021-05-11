@@ -23,23 +23,22 @@ body {
 }
 
 .box {
-  width: 300px;
-  height: 300px;
-  border-radius: 4px;
-  font-size: 3rem;
-  color: white;
-  margin: 1rem;
+  width: 200px;
+  height: 200px;
+  background-color: royalblue;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: bisque;
+  align-items: center;
+  font-size: 3rem;
+  color: #f4f4f4;
+  border-radius: 8px;
+  /* Respectivamente por posición */
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-delay: 0s, 1s;
 }
 
 .box:hover {
-  background-color: tan;
+  background-color: #208020;
+  color: #222;
 }
-
-.animate {
-  transition: background-color 2.4s;
-}
-
