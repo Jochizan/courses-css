@@ -1,0 +1,81 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #444;
+}
+
+/*
+  Transformaciones 2D
+  transform:
+    translate(x | (x, y)) | translateX() | translateY()
+      valores positivos -> derecha abajo
+      valores negativos -> izquierda arriba
+    
+    scale(x = y | (x, y)) | scaleX() | scaleY()
+
+    skew(x | (x, y)) | skewX(angle) | skewY(angle)
+
+  rotate(angle) -> Tenemos 4 formas de dar angulos en CSS
+    deg (360deg) -> grados sexagesimales
+    grad (400grad) -> grados centesimales
+    rad (6.2832rad) -> grados en radianes
+    turn (1turn) -> turn es un número de vueltas
+
+    Como usarlos:
+      valores positivos -> sentido horario
+      valores negativos -> sentido antihorario
+*/
+
+.box,
+.box-two {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  background-color: royalblue;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  transition: transform 0.5s;
+  /* transition: left 0.5s;
+  position: relative;
+  left: 0; */
+}
+
+.box:hover {
+  background-color: green;
+  color: black;
+  /* transform: translateX(50%); */
+                        /* X, Y */
+  /* transform: translate(-100%, -100%); */
+
+  /* Ayuda a escalar los items en (x, y)*/
+  /* transform: scale(2, 1); */
+ 
+  /* Ahora clickbat lo puede reemplazar ;D*/
+  /* transform: skew(45deg); */
+
+  /* Ayuda a rotar elementos :D */
+  /* transform: rotate(-180deg); */
+  /* left: 25%; */
+}
