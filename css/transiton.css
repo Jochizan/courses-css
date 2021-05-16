@@ -13,32 +13,91 @@ html {
 }
 
 body {
+  margin: 0;
   width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   background-color: #444;
 }
 
+.container {
+  width: 100%;
+  background-color: salmon;
+}
+
 .box {
-  width: 200px;
-  height: 200px;
+  width: 80px;
+  height: 60px;
   background-color: royalblue;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #f4f4f4;
   border-radius: 8px;
+  transition-property: transform;
+  transition-duration: 2s;
   /* Respectivamente por posición */
-  transition-property: background-color, color;
-  transition-duration: 1s;
-  transition-delay: 0s, 1s;
+  /* transition-property: background-color, color; */
+  /* transition-duration: 1s; */
+  /* transition-delay: 0s, 1s; */
 }
 
 .box:hover {
   background-color: #208020;
   color: #222;
+}
+
+/* Transition timing function
+
+  ease significa desacelerar / frenar
+  
+  ease: La transición comienza lentamente, acelera bruscamente y luego disminuye lentamente hacie el final.
+
+  ease-in: La transición comienza lentamente, y luego acelera progresivamente hasta el final.
+
+  ease-out: La animación empieza abruptamente y luego se ralentiza hacia el final.
+
+  ease-in-out: La animación comienza lentamente, se acelera y luego ralentiza hacia el final.
+
+  linear: la transición se mueve de principio a fin con una velocidad constante.
+
+  function calc: Nos sirve para hacer cálculos.
+    calc(value operation value...)
+
+  shorthand transition
+
+  transition: 2s transform ease-in
+  transition: transform 2s ease-in
+  transition: ease-in transform 2s
+*/
+
+.container:hover .box {
+  transform: translateX(calc(100vw - 100%));
+  transition: 2s 1s transform ease-out;
+  /* IMPORTANTE EL DELAY TIENE QUE IR DESPUES DE EL TIEMPO */
+}
+
+.ease {
+  transition-timing-function: ease;
+}
+
+.ease-in {
+  transition-timing-function: ease-in;
+}
+
+.ease-out {
+  transition-timing-function: ease-out;
+}
+
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.linear {
+  transition-timing-function: linear;
 }
