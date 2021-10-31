@@ -1,0 +1,23 @@
+p {
+  color: skyblue;
+}
+
+p:hover {
+  color: salmon;
+}
+
+p::before {
+  content: '✔️';
+}
+
+p::after {
+  content: '❌';
+}
+
+div p:nth-child(2) {
+  color: violet;
+}
+
+::placeholder {
+  color: tomato;
+}
